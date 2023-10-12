@@ -1,0 +1,51 @@
+button {
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  box-shadow: 3px 3px 4px #808080;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+header button {
+  width: 120px;
+  height: 35px;
+  border-radius: 20px;
+  background-color: rgb(251, 251, 99);
+  color: #000;
+}
+header button:hover {
+  background-color: rgb(250, 241, 61);
+}
+
+.btn {
+  margin-bottom: 5px;
+  width: 150px;
+  height: 30px;
+  border-radius: 20px;
+  color: #fff;
+  background-color: rgb(67, 92, 217);
+}
+.btn:hover {
+  background-color: rgb(24, 42, 129);
+}
+.btn-edit,
+.btn-modify {
+  width: 120px;
+  margin-top: 5px;
+}
+.btn-remove {
+  background-color: rgb(232, 57, 57);
+}
+.btn-remove:hover {
+  background-color: rgb(190, 21, 21);
+}
+.btn-block {
+  background-color: rgb(235, 130, 18);
+}
+.btn-block:hover {
+  background-color: rgb(221, 101, 41);
+}

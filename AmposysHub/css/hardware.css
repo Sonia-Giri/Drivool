@@ -1,0 +1,124 @@
+#main-containerPDF {
+  padding: 20px;
+  width: 100%;
+}
+
+mark {
+  border-radius: 10px;
+  background-color: aquamarine;
+  font-size: 15px;
+}
+
+#hw-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  margin: 20px;
+}
+h2 {
+  color: #808080;
+  /* box-shadow: 3px 3px 4px #808080; */
+}
+
+.icon {
+  font-size: 1.2em;
+  color: #808080;
+}
+
+table {
+  width: 100%;
+  margin: 5px;
+  border-collapse: collapse;
+  font-family: Arial, Helvetica, sans-serif;
+}
+thead {
+  background-color: rgb(217, 253, 253);
+}
+th {
+  padding: 8px;
+}
+td {
+  padding: 5px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+#main-table tr:nth-child(even) {
+  background-color: #f7f7f7;
+}
+#main-table tr:nth-child(odd) {
+  background-color: #fff;
+}
+tbody .icon {
+  font-size: 1.2em;
+  padding: 8px;
+  margin: 3px;
+  margin-bottom: 0;
+  border-radius: 50px;
+  box-shadow: 3px 3px 4px #808080;
+}
+tbody .icon:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #808080;
+}
+tbody td:first-child {
+  color: #808080;
+  font-weight: bold;
+}
+tbody td:first-child p {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.hardware-info {
+  margin: 10px;
+}
+.hw-flexbox {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.hw-flexitem {
+  margin-right: 5px;
+}
+.mode {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.pricing {
+  font-size: 15px;
+  text-align: center;
+}
+.pricing th,
+td {
+  padding: 5px;
+  color: #333;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  padding: 10px;
+  border-top: #808080 2px solid;
+  border-radius: 5px;
+}
+.gridcontainer {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr 0.6fr 1.5fr;
+  /* column-gap: 2px; */
+}
+.griditem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.griditem header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}

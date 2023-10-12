@@ -1,0 +1,79 @@
+.accordion {
+  width: 100%;
+  margin: 10px auto;
+  height: auto;
+}
+
+.accordion-item {
+  padding: 1px 5px;
+  border-radius: 5px;
+  margin: 3px 0;
+  margin-left: 5px;
+}
+.accordion-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  font-size: 16px;
+  min-height: 20px;
+  /* font-weight: 500; */
+}
+.accordion-title:hover {
+  font-weight: 500;
+}
+.accordion-header {
+  text-transform: uppercase;
+  padding: 8px;
+  background-color: #68b398;
+  box-shadow: 1px 1px 3px gray;
+}
+
+.accordion-header:hover {
+  cursor: pointer;
+  background-color: #5bcea3;
+}
+
+.accordion-content {
+  margin: 2px 0;
+  /* min-height: 3rem; */
+  height: 8rem;
+  max-height: 10rem;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #a4ead0;
+  transition: all 0.3s ease-out;
+}
+
+.accordion-content:hover {
+  /* background-color: rgb(192, 230, 220); */
+  /* color: #fff; */
+  padding: 10px;
+  box-shadow: 1px 1px 3px gray;
+  border-radius: 3px;
+}
+
+.contentname {
+  padding: 8px;
+}
+.contentname:hover {
+  background-color: rgb(199, 247, 235);
+  border-radius: 3px;
+  text-decoration: underline;
+}
+.contentname i {
+  text-decoration: none;
+}
+.collapse {
+  height: 0px;
+}
+
+.rotate-up {
+  transform: rotate(-180deg); /* Rotate the icon 180 degrees */
+  transition: transform 0.3s ease-in-out; /* Apply a smooth transition */
+}
+
+.rotate-down {
+  transform: rotate(0deg); /* Rotate the icon 180 degrees */
+  transition: transform 0.3s ease-in-out; /* Apply a smooth transition */
+}

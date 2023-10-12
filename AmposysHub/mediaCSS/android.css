@@ -1,0 +1,135 @@
+@media only screen and (max-width: 700px) {
+  #left-pane {
+    height: 100vh;
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: #f2f2f2;
+    transition: all 0.3s ease-in-out;
+    position: fixed;
+    left: -300px;
+  }
+  #content-left {
+    max-width: 200px;
+    margin-right: 0;
+  }
+
+  .hide-sidebar #left-pane {
+    width: 200px;
+    left: 0px;
+    content-visibility: visible;
+    animation: slide 0.3s forwards;
+    animation-delay: 2s;
+  }
+  .expand-content #right-pane {
+    margin-left: 0px;
+    padding: 0px;
+  }
+  #header-left {
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+  }
+
+  /* GRID CONTAINER */
+  .gridcontainer {
+    grid-template-columns: 0.6fr 1fr;
+    grid-auto-rows: minmax(150px, auto);
+    row-gap: 5px;
+  }
+  .griditem {
+    padding: 0;
+  }
+
+  /* MAIN CONTAINER CSS */
+  body {
+    font-size: 15px;
+  }
+  #document {
+    margin: 0;
+    align-self: center;
+    width: 98%;
+    height: auto;
+    background-color: #fff;
+    box-shadow: none;
+  }
+  #main-containerPDF {
+    padding: 0;
+    width: 100%;
+  }
+  .accordion-item {
+    padding: 1px 2px;
+    border-radius: 5px;
+    margin: 0;
+    /* margin-left: 5px; */
+  }
+  .accordion-header {
+    padding: 3px;
+  }
+  .accordion-title {
+    font-size: 13px;
+  }
+  .contentname {
+    padding: 5px;
+    font-size: 14px;
+  }
+  #hw-header {
+    height: 30px;
+    margin: 7px;
+  }
+  .icon {
+    font-size: 0.8em;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  /* footer {
+    margin: 3px;
+    padding: 5px;
+    justify-content: space-around;
+  } */
+
+  /* BUTTONS CSS HERE! */
+  button {
+    /* font-size: 13px; */
+    box-shadow: 1px 1px 2px #808080;
+  }
+  header button {
+    width: 100px;
+    height: 30px;
+  }
+  .btn {
+    font-size: 12px;
+    margin-bottom: 3px;
+    width: 100px;
+    height: 30px;
+  }
+
+  /* GRID ITEMS */
+  tbody .icon {
+    font-size: 1em;
+    padding: 6px;
+    margin: 1px;
+  }
+  th {
+    padding: 4px;
+  }
+  .pricing th,
+  td {
+    padding: 5px;
+    text-align: center;
+    padding-bottom: 0px;
+  }
+  tbody td:first-child p {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+  mark {
+    font-size: 13px;
+  }
+  .pricing {
+    font-size: 14px;
+  }
+}

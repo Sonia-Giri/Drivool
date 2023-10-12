@@ -1,0 +1,140 @@
+@media only screen and (min-width: 700px) and (max-width: 1100px) {
+  #left-pane {
+    height: 100vh;
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: #f2f2f2;
+    transition: all 0.3s ease-in-out;
+    position: fixed;
+    left: -300px;
+  }
+  #content-left {
+    max-width: 300px;
+    margin-right: 0;
+  }
+
+  .hide-sidebar #left-pane {
+    width: 300px;
+    left: 0px;
+    content-visibility: visible;
+    animation: slide 0.3s forwards;
+    animation-delay: 2s;
+  }
+  .expand-content #right-pane {
+    margin-left: 0px;
+    padding: 0px;
+  }
+
+  #header-left {
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+  }
+
+  /* GRID CONTAINER */
+  .gridcontainer {
+    grid-template-columns: 1.5fr 2fr;
+    grid-auto-rows: minmax(200px, auto);
+    row-gap: 8px;
+  }
+  .griditem {
+    padding: 0;
+  }
+
+  /* MAIN CONTAINER CSS */
+  body {
+    font-size: 24px;
+  }
+  #document {
+    margin: 0;
+    align-self: center;
+    width: 98%;
+    height: auto;
+    background-color: #fff;
+    box-shadow: none;
+  }
+  #main-containerPDF {
+    padding: 0;
+    width: 100%;
+  }
+  .accordion-item {
+    padding: 2px 4px;
+    border-radius: 8px;
+    margin: 0;
+    /* margin-left: 5px; */
+  }
+  .accordion-header {
+    padding: 8px;
+  }
+  .accordion-title {
+    font-size: 15px;
+  }
+  .contentname {
+    padding: 10px;
+    font-size: 18px;
+  }
+  #hw-header {
+    height: 50px;
+    margin: 10px;
+  }
+  .icon {
+    font-size: 1.3em;
+  }
+  h2 {
+    font-size: 32px;
+  }
+  footer {
+    margin: 3px;
+    padding: 5px;
+    justify-content: space-evenly;
+  }
+  /* BUTTONS CSS HERE! */
+  button {
+    /* font-size: 13px; */
+    box-shadow: 2px 2px 4px #808080;
+  }
+  header button {
+    width: 120px;
+    height: 40px;
+  }
+  .btn {
+    font-size: 16px;
+    margin-bottom: 5px;
+    width: 150px;
+    height: 35px;
+  }
+  /* footer button {
+    font-size: 15px;
+    width: 80px;
+    height: 30px;
+  } */
+
+  /* GRID ITEMS */
+  tbody .icon {
+    font-size: 1.2em;
+    padding: 8px;
+    margin: 2px;
+  }
+  th {
+    padding: 8px;
+  }
+  .pricing th,
+  td {
+    padding: 5px;
+    text-align: center;
+    padding-bottom: 0px;
+  }
+  tbody td:first-child p {
+    font-size: 25px;
+    /* margin-bottom: 5px; */
+  }
+  mark {
+    font-size: 18px;
+  }
+  .pricing {
+    font-size: 22px;
+  }
+}

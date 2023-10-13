@@ -2,11 +2,17 @@
   padding: 20px;
   width: 100%;
 }
-
+/* @media (max-width: 700px) {
+  #main-containerPDF {
+    size: 0.5em;
+  }
+} */
 mark {
   border-radius: 10px;
   background-color: aquamarine;
   font-size: 15px;
+
+  padding: 1px;
 }
 
 #hw-header {
@@ -53,8 +59,8 @@ tbody .icon {
   font-size: 1.2em;
   padding: 8px;
   margin: 3px;
-  margin-bottom: 0;
-  border-radius: 50px;
+  margin-bottom: 10px;
+  border-radius: 50%;
   box-shadow: 3px 3px 4px #808080;
 }
 tbody .icon:hover {
@@ -71,7 +77,8 @@ tbody td:first-child p {
   margin-bottom: 5px;
 }
 .hardware-info {
-  margin: 10px;
+  margin: 2px;
+  margin-bottom: 5px;
 }
 .hw-flexbox {
   display: flex;
@@ -83,6 +90,7 @@ tbody td:first-child p {
 
 .hw-flexitem {
   margin-right: 5px;
+  /* justify-content: baseline; */
 }
 .mode {
   display: flex;
@@ -109,7 +117,8 @@ footer {
 }
 .gridcontainer {
   display: grid;
-  grid-template-columns: 1fr 1.8fr 0.6fr 1.5fr;
+  grid-template-columns: repeat(3, minmax(150px, 1fr));
+  /* 1.3fr 2fr 1.5fr; */
   /* column-gap: 2px; */
 }
 .griditem {

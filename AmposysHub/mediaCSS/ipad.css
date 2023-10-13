@@ -57,7 +57,7 @@
     box-shadow: none;
   }
   #main-containerPDF {
-    padding: 0;
+    padding: 10px;
     width: 100%;
   }
   .accordion-item {
@@ -70,14 +70,14 @@
     padding: 8px;
   }
   .accordion-title {
-    font-size: 15px;
+    font-size: 16px;
   }
   .contentname {
     padding: 10px;
-    font-size: 18px;
+    font-size: 20px;
   }
   #hw-header {
-    height: 50px;
+    height: 60px;
     margin: 10px;
   }
   .icon {
@@ -97,22 +97,30 @@
     box-shadow: 2px 2px 4px #808080;
   }
   header button {
-    width: 120px;
+    width: 150px;
     height: 40px;
+    font-size: 20px;
   }
   .btn {
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 5px;
-    width: 150px;
+    width: 200px;
     height: 35px;
   }
-  /* footer button {
-    font-size: 15px;
-    width: 80px;
-    height: 30px;
-  } */
 
   /* GRID ITEMS */
+  .gridcontainer {
+    grid-template-columns: minmax(150px, 1fr);
+
+    grid-auto-rows: minmax(200px, auto);
+    row-gap: 5px;
+  }
+  .griditem {
+    padding: 0;
+  }
+  .griditem3 {
+    grid-area: 2/1 / span1/span2;
+  }
   tbody .icon {
     font-size: 1.2em;
     padding: 8px;
@@ -127,14 +135,20 @@
     text-align: center;
     padding-bottom: 0px;
   }
-  tbody td:first-child p {
+  .idno {
     font-size: 25px;
-    /* margin-bottom: 5px; */
   }
   mark {
     font-size: 18px;
   }
   .pricing {
     font-size: 22px;
+  }
+  /* .toggle {
+    width: 150px;
+    height: 40px;
+  } */
+  .hw-flexbox {
+    margin-bottom: 10px;
   }
 }

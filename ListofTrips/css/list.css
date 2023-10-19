@@ -1,0 +1,30 @@
+#main-containerPDF {
+  padding: 20px;
+  width: 100%;
+}
+
+#list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  /* margin: 10px; */
+  background-color: #555;
+}
+
+#main-table {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 14px;
+  border-collapse: collapse;
+  /* margin: 2px; */
+}
+
+#main-table td {
+  padding: 5px;
+  background-color: #f7f7f7;
+}
+#main-table th {
+  background-color: #555;
+  color: #fff;
+  padding: 5px;
+}

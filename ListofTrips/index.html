@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="./js/query_string.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/list.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div id="header">
+      <div>
+        <i class="fas fa-bars menu-icon" id="menu-icon"></i>
+      </div>
+    </div>
+    <div id="container-main">
+      <div id="left-pane">
+        <div id="content-left"></div>
+      </div>
+      <div id="right-pane">
+        <div id="content-right">
+          <div id="document-window">
+            <div id="document">
+              <div id="main-containerPDF"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("menu-icon")
+        .addEventListener("click", function () {
+          document.body.classList.toggle("hide-sidebar");
+          document.body.classList.toggle("expand-content");
+        });
+      $(document).ready(function () {
+        //LOAD hardware.html
+        $(".menu-icon").click(function () {
+          $("div#main-containerPDF").load("./list.html", function () {});
+        });
+      });
+    </script>
+  </body>
+</html>

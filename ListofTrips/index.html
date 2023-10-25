@@ -19,6 +19,8 @@
     />
     <link rel="stylesheet" href="/css/list.css" />
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/sidebar.css" />
+    <link rel="stylesheet" href="/css/address.css" />
     <link rel="stylesheet" href="/css/android.css" />
     <link rel="stylesheet" href="/css/ipad.css" />
   </head>
@@ -30,7 +32,116 @@
     </div>
     <div id="container-main">
       <div id="left-pane">
-        <div id="content-left"></div>
+        <div id="content-left">
+          <div id="sidebar-window">
+            <selection id="vehicles-selection">
+              <form action="#" method="post">
+                <fieldset>
+                  <legend>&nbsp;Vehicles&nbsp;</legend>
+                  <input
+                    type="checkbox"
+                    id="vehicle1"
+                    name="vehicle1"
+                    value="Tata Tiago"
+                  />
+                  <label for="vehicle1">Tata Tiago</label>
+                  <br />
+                  <input
+                    type="checkbox"
+                    id="vehicle2"
+                    name="vehicle2"
+                    value="Maruti Suzuki Wagon R"
+                  />
+                  <label for="vehicle2">Maruti Suzuki Wagon R</label>
+                  <br />
+                  <input
+                    type="checkbox"
+                    id="vehicle3"
+                    name="vehicle3"
+                    value="Hyundai i20"
+                  />
+                  <label for="vehicle3">Hyundai i20</label>
+                  <br />
+                  <input
+                    type="checkbox"
+                    id="vehicle4"
+                    name="vehicle4"
+                    value="Bajaj Pulsar 150"
+                  />
+                  <label for="vehicle4">Bajaj Pulsar 150</label>
+                  <br />
+                  <input
+                    type="checkbox"
+                    id="vehicle5"
+                    name="vehicle5"
+                    value="Royal Enfield Classic 350"
+                  />
+                  <label for="vehicle5">Enfield Classic 350</label>
+                  <br />
+                  <input
+                    type="checkbox"
+                    id="vehicle6"
+                    name="vehicle6"
+                    value="Honda CB Unicorn 150"
+                  />
+                  <label for="vehicle6">Honda CB Unicorn 150</label>
+                  <br />
+                </fieldset>
+              </form>
+            </selection>
+            <br />
+            <selection id="time-selection">
+              <form action="#" method="post">
+                <fieldset>
+                  <legend>&nbsp;Select Time&nbsp;</legend>
+                  <input type="radio" id="today" name="thisday" value="Today" />
+                  <label for="today">Today</label>
+                  <br />
+                  <input
+                    type="radio"
+                    id="yesterday"
+                    name="thisday"
+                    value="Yesterday"
+                  />
+                  <label for="yesterday">Yesterday</label>
+                  <br />
+                  <input
+                    type="radio"
+                    id="lastweek"
+                    name="thisday"
+                    value="Last Week"
+                  />
+                  <label for="lastweek">Last Week</label>
+                  <br />
+                  <input
+                    type="radio"
+                    id="lastmonth"
+                    name="thisday"
+                    value="Last Month"
+                  />
+                  <label for="lastmonth">Last Month</label><br />
+                  <hr />
+
+                  <!-- CUSTOMISED TIME PERIOD -->
+                  <div class="customdate">
+                    <input
+                      type="radio"
+                      name="thisday"
+                      value="Customized Date"
+                    />
+                    <label for="customdate">Customized Date</label>
+                    <input
+                      type="date"
+                      name="thisday"
+                      id="customdate"
+                      value="Customized Date"
+                    />
+                  </div>
+                </fieldset>
+              </form>
+            </selection>
+          </div>
+        </div>
       </div>
       <div id="right-pane">
         <div id="content-right">
@@ -42,7 +153,6 @@
         </div>
       </div>
     </div>
-
     <script>
       document
         .getElementById("menu-icon")

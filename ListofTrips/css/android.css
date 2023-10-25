@@ -22,20 +22,11 @@
     padding: 0px;
   }
 
-  #list-header {
-    height: 30px;
-    background-color: #fff;
-  }
-
   body {
     font-size: 14px;
   }
   #document {
-    margin: 0;
-    align-self: center;
-    width: 98%;
-    height: auto;
-    background-color: #fff;
+    margin: 0px;
     box-shadow: none;
   }
   #main-containerPDF {
@@ -43,11 +34,41 @@
     /* width: 100%; */
   }
   #main-table {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   #main-table td,
   th {
     padding: 3px;
+  }
+  #document {
+    width: 100%;
+  }
+
+  /* SIDEBAR CSS */
+  #sidebar-window selection {
+    font-size: 13px;
+    line-height: 1.4em;
+  }
+
+  #sidebar-window legend {
+    font-size: 1em;
+  }
+
+  /* LIST CSS */
+  #list-header {
+    height: 30px;
+    background-color: #fff;
+  }
+  #main-table th,
+  td {
+    font-size: 12px;
+    padding: 2px;
+  }
+
+  /* ADDRESS CSS */
+  .tooltip .tooltiptext {
+    width: 110px;
+    left: 20%;
   }
 }

@@ -1,0 +1,35 @@
+#sidebar-window selection {
+  font-size: 16px;
+  line-height: 2em;
+  height: auto;
+}
+#sidebar-window fieldset {
+  padding: 3px;
+  border: 1.2px solid #ccc;
+  border-radius: 6px;
+}
+#sidebar-window legend {
+  font-size: 1.2em;
+  color: #777;
+}
+#sidebar-window label {
+  padding: 3px;
+  color: #333;
+}
+#sidebar-window label:hover {
+  background-color: #ddd;
+  /* box-shadow: 2px 2px; */
+  border-radius: 6px;
+  cursor: pointer;
+}
+#sidebar-window input:hover {
+  cursor: pointer;
+}
+.customdate {
+  line-height: 1.5em;
+  text-align: center;
+  margin: 5px;
+}
+#customdate {
+  border: 1.2px solid #ccc;
+}

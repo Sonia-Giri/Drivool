@@ -16,24 +16,31 @@
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 14px;
   border-collapse: collapse;
-  /* margin: 2px; */
 }
 
 #main-table td {
   padding: 5px;
+  padding-bottom: 15px;
   background-color: #f7f7f7;
 }
 #main-table th {
   background-color: #555;
   color: #fff;
   padding: 5px;
+  text-align: center;
 }
 #main-table hr {
-  margin: 2px;
+  margin: 5px 15px;
 }
 #main-table i {
   size: 8px;
 }
 #main-table i:hover {
   cursor: pointer;
+}
+#main-table td {
+  text-align: center;
+}
+#main-table td:nth-child(odd) {
+  background-color: #eee;
 }

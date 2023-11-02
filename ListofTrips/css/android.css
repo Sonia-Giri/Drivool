@@ -62,13 +62,75 @@
   }
   #main-table th,
   td {
-    font-size: 12px;
-    padding: 2px;
+    font-size: 13px;
   }
-
+  #main-table {
+    padding: 0 5px;
+  }
+  #main-table td:nth-child(odd) {
+    background-color: #f7f7f7;
+  }
+  #main-table tr {
+    background-color: #000;
+    padding-top: 2px;
+  }
   /* ADDRESS CSS */
   .tooltip .tooltiptext {
     width: 110px;
     left: 20%;
+  }
+  #main-table table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+  #main-table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  #main-table td {
+    /* Behave  like a "row" */
+    border: none;
+    padding-left: 50%;
+  }
+
+  #main-table td:before {
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+  #main-table td {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    padding: 10px 15px;
+  }
+
+  #main-table td:nth-of-type(1):before {
+    content: "TRIP:";
+  }
+  #main-table td:nth-of-type(2):before {
+    content: "VEHICLE:";
+  }
+  #main-table td:nth-of-type(3):before {
+    content: "TIME:";
+  }
+  #main-table td:nth-of-type(4):before {
+    content: "TRAVELLED:";
+  }
+  #main-table td:nth-of-type(5):before {
+    content: "FUEL USED:";
+  }
+  #main-table td:nth-of-type(6):before {
+    content: "START ADDRESS:";
+  }
+  #main-table td:nth-of-type(7):before {
+    content: "END ADDRESS:";
   }
 }

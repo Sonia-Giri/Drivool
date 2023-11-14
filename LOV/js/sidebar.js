@@ -19,8 +19,21 @@ function busesInfo(information) {
   for (var i = 0; i < itemONlist.length; i++) {
     var Info = itemONlist[i];
     var strHTMLinfo = `
-    <i class="fas fa-car">&nbsp;</i>
-    <span>${Info.name}</span><br/>
+    <div class="accordion">
+                  <div class="title">
+                    <i class="fas fa-car">&nbsp;</i>
+                    <span>${Info.name}</span><i class="dropdown icon"></i>
+                  </div>
+                  <div class="content">
+                    <ol>
+                      <li>Bus No. :&nbsp;<span>${Info.busno}</span></li>
+                      <li>GPS Type :&nbsp;<span>${Info.gpstype}</span></li>
+                      <li>ID :&nbsp;<span>${Info.id}</span></li>
+                      <li>Route :&nbsp;<span>${Info.route}</span></li>
+                      <li>Type :&nbsp;<span>${Info.type}</span></li>
+                    </ol>
+                  </div>
+                </div>  
         `;
     strBusesDetails += strHTMLinfo;
   }

@@ -14,3 +14,10 @@
 #listOfVehicles div p {
   font-size: 13px;
 }
+.lov-flex {
+  display: flex;
+}
+.lov-flex i {
+  font-size: 1em;
+  margin-top: 2px;
+}

@@ -44,6 +44,13 @@
           <div id="sidebar-window">
             <div id="listOfVehicles">
               <!-- JSON -->
+              <!-- <div class="lov-flex">
+                <i class="fas fa-bus"></i>
+                <span>
+                  <h3>&nbsp;${info.route}</h3>
+                  <p>&nbsp;${info.id}</p>
+                </span>
+              </div>-->
             </div>
             <!-- sidebar-window -->
           </div>
@@ -79,7 +86,7 @@
         success: function (jo) {
           var k = JSON.stringify(jo);
           busesInfo(jo);
-          console.log(k);
+          // console.log(k);
         },
         error: function (error) {
           console.log(`Error ${error}`);
@@ -88,21 +95,49 @@
 
       function busesInfo(information) {
         var strBusesDetails = "";
-        var itemONlist = information.buses;
-        for (var i = 0; i < itemONlist.length; i++) {
-          var info = itemONlist[i];
+        var itemOnlist = information.buses;
+        for (var i = 0; i < itemOnlist.length; i++) {
+          var info = itemOnlist[i];
           var strHTMLinfo = `
-          <div class="lov-flex">
-               <i class="fas fa-bus"></i>
-               <span>
-                 <h3>&nbsp;${info.route}</h3>
-                 <p>&nbsp;${info.id}</p>
-               </span>
-          </div><br/>
-    `;
+            <div class="lov-flex">
+                 <i class="fas fa-bus"></i>
+                 <span>
+                   <h3>&nbsp;${info.route}</h3>
+                   <p>&nbsp;${info.id}</p>
+                 </span>
+            </div><br/>
+      `;
           strBusesDetails += strHTMLinfo;
         }
         $("div#listOfVehicles").html(strBusesDetails);
+      }
+
+      $.ajax({
+        url: "https://us-central1-drivoolapis.cloudfunctions.net/getTripSummary/?gapn=diledasmahant&key=-NMsOlBokV78RZ32c3js&date=11242023",
+        dataType: "json",
+        type: "GET",
+
+        success: function (summary) {
+          var t = JSON.stringify(summary);
+          tripSummary(summary);
+          // console.log(t);
+        },
+        error: function (error) {
+          console.log(`Error ${error}`);
+        },
+      });
+
+      function tripSummary(summaryDetails) {
+        console.log("let's see");
+        var strTripData = "";
+        var dataOnList = summaryDetails.diledasmahant_v002;
+        // console.log(JSON.stringify(dataOnList));  //this is working fine
+        for (var j = 0; j < dataOnList.length; j++) {
+          var savedTime = dataOnList[j];
+          console.log(`${savedTime.data}`);
+          //   var dataAbtTrip = savedTime.data;
+          //   console.log(JSON.stringify(dataAbtTrip)); //why is this one not working? :(
+        }
       }
     </script>
     <!-- <script src="./js/sidebar.js"></script> -->

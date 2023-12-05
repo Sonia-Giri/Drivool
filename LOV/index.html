@@ -24,6 +24,11 @@
     <link rel="stylesheet" href="./css/android.css" />
     <link rel="stylesheet" href="./css/ipad.css" />
 
+    <!-- <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+      rel="stylesheet"
+    /> -->
+
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -44,13 +49,6 @@
           <div id="sidebar-window">
             <div id="listOfVehicles">
               <!-- JSON -->
-              <!-- <div class="lov-flex">
-                <i class="fas fa-bus"></i>
-                <span>
-                  <h3>&nbsp;${info.route}</h3>
-                  <p>&nbsp;${info.id}</p>
-                </span>
-              </div>-->
             </div>
             <!-- sidebar-window -->
           </div>
@@ -130,13 +128,28 @@
       function tripSummary(summaryDetails) {
         console.log("let's see");
         var strTripData = "";
-        var dataOnList = summaryDetails.diledasmahant_v002;
-        // console.log(JSON.stringify(dataOnList));  //this is working fine
-        for (var j = 0; j < dataOnList.length; j++) {
+        let dataOnList = summaryDetails.diledasmahant_v002;
+        // console.log(JSON.stringify(dataOnList)); //this is working fine
+
+        for (var j in dataOnList) {
           var savedTime = dataOnList[j];
-          console.log(`${savedTime.data}`);
-          //   var dataAbtTrip = savedTime.data;
-          //   console.log(JSON.stringify(dataAbtTrip)); //why is this one not working? :(
+          //console.log(j + ":" + savedTime); //this is working fine
+          for (var i in savedTime) {
+            var ignitionData = savedTime[i];
+            console.log(i + ":" + ignitionData); //this is working fine
+
+
+
+//how to iterate between multiple objects...?
+            let dataAbtTrip = ignitionData.data;
+            // console.log(ignitionData.data);
+
+            for (var l in dataAbtTrip) {
+              // if (dataAbtTrip.hasOwnProperty(k)) {
+              //console.log(l + ":" + dataAbtTrip[l]);}
+            }
+          }
+          console.log("\n");
         }
       }
     </script>

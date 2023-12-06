@@ -131,25 +131,21 @@
         let dataOnList = summaryDetails.diledasmahant_v002;
         // console.log(JSON.stringify(dataOnList)); //this is working fine
 
-        for (var j in dataOnList) {
-          var savedTime = dataOnList[j];
-          //console.log(j + ":" + savedTime); //this is working fine
-          for (var i in savedTime) {
-            var ignitionData = savedTime[i];
-            console.log(i + ":" + ignitionData); //this is working fine
+        for (var savedTime in dataOnList) {
+          var objAcc = dataOnList[savedTime];
+          //console.log("AccData :" + JSON.stringify(objAcc)); //this is working fine
+          console.log("savedtime :" + savedTime);
+          console.log("recievedtime :" + JSON.stringify(objAcc.t));
+          console.log("Ignition :" + JSON.stringify(objAcc.acc));
 
+          let dataAbtTrip = objAcc.data;
+          //console.log(JSON.stringify(dataAbtTrip)); //this is working fine
+          console.log("Longitude :" + JSON.stringify(dataAbtTrip.loc.o));
+          console.log("Latitude :" + JSON.stringify(dataAbtTrip.loc.a));
+          console.log("Altitude :" + JSON.stringify(dataAbtTrip.loc.l));
+          console.log("Speed :" + JSON.stringify(dataAbtTrip.loc.s));
+          console.log("gpsModel :" + JSON.stringify(dataAbtTrip.model));
 
-
-//how to iterate between multiple objects...?
-            
-            let dataAbtTrip = ignitionData.data;
-            // console.log(ignitionData.data);
-
-            for (var l in dataAbtTrip) {
-              // if (dataAbtTrip.hasOwnProperty(k)) {
-              //console.log(l + ":" + dataAbtTrip[l]);}
-            }
-          }
           console.log("\n");
         }
       }

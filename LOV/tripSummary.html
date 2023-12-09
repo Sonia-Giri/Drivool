@@ -1,0 +1,104 @@
+<header id="list-header"></header>
+<!-- <hr /> -->
+<div id="main-div">
+  <table id="main-table" width="100%">
+    <thead>
+      <tr>
+        <th>Ignition</th>
+        <th>Model</th>
+        <th>Speed</th>
+        <th>SavedTime</th>
+        <th>RecievedTime</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Altitude</th>
+      </tr>
+    </thead>
+    <tbody id="tripSummaryDetails"></tbody>
+  </table>
+</div>
+<script>
+  // epochTime
+  function getDateTimeString(date) {
+  
+    var dd = date.getDate();
+    var mon = date.getMonth() + 1; //January is 0!
+    var yyyy = date.getFullYear();
+
+    var hh = date.getHours();
+
+    var mm = date.getMinutes();
+
+    if (dd < 10) {
+      dd = "0" + dd;
+    }
+
+    if (mon < 10) {
+      mon = "0" + mon;
+    }
+
+    if (mm < 10) {
+      mm = "0" + mm;
+    }
+
+    let ampm = "AM";
+
+    if (hh >= 12) {
+      ampm = "PM";
+      if (hh > 12) {
+        hh -= 12;
+      }
+    }
+
+    if (hh < 10) {
+      hh = "0" + hh;
+    }
+
+    return `${dd}/${mon}/${yyyy} ${hh}:${mm} ${ampm}`;
+  }
+
+  $.ajax({
+    url: "https://us-central1-drivoolapis.cloudfunctions.net/getTripSummary/?gapn=diledasmahant&key=-NMsOlBokV78RZ32c3js&date=11242023",
+    dataType: "json",
+    type: "GET",
+
+    success: function (summary) {
+      var t = JSON.stringify(summary);
+      tripSummary(summary);
+      // console.log(t);
+    },
+    error: function (error) {
+      console.log(`Error ${error}`);
+    },
+  });
+
+  function tripSummary(summaryDetails) {
+    console.log("let's see");
+    var strTripData = "";
+    let dataOnList = summaryDetails.diledasmahant_v002;
+    // console.log(JSON.stringify(dataOnList)); //this is working fine
+
+    for (var savedTime in dataOnList) {
+      var objAcc = dataOnList[savedTime];
+      var strSavedTime = getDateTimeString(new Date(savedTime)); //not working
+      var strReceivedTime = getDateTimeString(new Date(objAcc.t));
+      let dataAbtTrip = objAcc.data;
+    
+      var strHTMLTripDetails = `<tr>
+  <td>${objAcc.acc}</td>
+  <td>${dataAbtTrip.model}</td>
+  <td>${dataAbtTrip.loc.s}&nbsp;m/s</td>
+  <td>${strSavedTime}</td> 
+  <td>${strReceivedTime}</td>
+  <td>${dataAbtTrip.loc.a}&deg; N</td>
+  <td>${dataAbtTrip.loc.o}&deg; E</td>
+  <td>${dataAbtTrip.loc.l}</td>
+  </tr>`;
+
+      strTripData += strHTMLTripDetails;
+
+      console.log("\n");
+    }
+    $("tbody#tripSummaryDetails").html(strTripData);
+  }
+</script>

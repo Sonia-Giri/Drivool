@@ -24,11 +24,6 @@
     <link rel="stylesheet" href="./css/android.css" />
     <link rel="stylesheet" href="./css/ipad.css" />
 
-    <!-- <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
-      rel="stylesheet"
-    /> -->
-
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -68,14 +63,14 @@
       $(document).ready(function () {
         //LOAD hardware.html
         $(".menu-icon").click(function () {
-          $("div#main-containerPDF").load("./list.html", function () {});
+          $("div#main-containerPDF").load("./tripSummary.html", function () {});
         });
         $("#menu-icon").click(function () {
           $("body").toggleClass("hide-sidebar expand-content");
         });
       });
-
-      // $(".ui.accordion").accordion();
+    
+      //sidebar
       $.ajax({
         url: "https://us-central1-drivoolapis.cloudfunctions.net/getVehicles?gapn=drivoolapp&key=-NS_dV4eoH3pWIe2t7c4",
         dataType: "json",
@@ -109,47 +104,7 @@
         }
         $("div#listOfVehicles").html(strBusesDetails);
       }
-
-      $.ajax({
-        url: "https://us-central1-drivoolapis.cloudfunctions.net/getTripSummary/?gapn=diledasmahant&key=-NMsOlBokV78RZ32c3js&date=11242023",
-        dataType: "json",
-        type: "GET",
-
-        success: function (summary) {
-          var t = JSON.stringify(summary);
-          tripSummary(summary);
-          // console.log(t);
-        },
-        error: function (error) {
-          console.log(`Error ${error}`);
-        },
-      });
-
-      function tripSummary(summaryDetails) {
-        console.log("let's see");
-        var strTripData = "";
-        let dataOnList = summaryDetails.diledasmahant_v002;
-        // console.log(JSON.stringify(dataOnList)); //this is working fine
-
-        for (var savedTime in dataOnList) {
-          var objAcc = dataOnList[savedTime];
-          //console.log("AccData :" + JSON.stringify(objAcc)); //this is working fine
-          console.log("savedtime :" + savedTime);
-          console.log("recievedtime :" + JSON.stringify(objAcc.t));
-          console.log("Ignition :" + JSON.stringify(objAcc.acc));
-
-          let dataAbtTrip = objAcc.data;
-          //console.log(JSON.stringify(dataAbtTrip)); //this is working fine
-          console.log("Longitude :" + JSON.stringify(dataAbtTrip.loc.o));
-          console.log("Latitude :" + JSON.stringify(dataAbtTrip.loc.a));
-          console.log("Altitude :" + JSON.stringify(dataAbtTrip.loc.l));
-          console.log("Speed :" + JSON.stringify(dataAbtTrip.loc.s));
-          console.log("gpsModel :" + JSON.stringify(dataAbtTrip.model));
-
-          console.log("\n");
-        }
-      }
     </script>
-    <!-- <script src="./js/sidebar.js"></script> -->
+  
   </body>
 </html>

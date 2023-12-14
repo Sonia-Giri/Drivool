@@ -7,8 +7,9 @@
         <th>Ignition</th>
         <th>Model</th>
         <th>Speed</th>
-        <th>SavedTime</th>
-        <th>RecievedTime</th>
+        <th>Saved Time</th>
+        <th>Recieved Time</th>
+        <th>Time Duration</th>
         <th>Latitude</th>
         <th>Longitude</th>
         <th>Altitude</th>
@@ -20,7 +21,7 @@
 <script>
   // epochTime
   function getDateTimeString(date) {
-  
+   
     var dd = date.getDate();
     var mon = date.getMonth() + 1; //January is 0!
     var yyyy = date.getFullYear();
@@ -28,6 +29,9 @@
     var hh = date.getHours();
 
     var mm = date.getMinutes();
+
+    var ss = date.getSeconds();
+    var ms = date.getMilliseconds();
 
     if (dd < 10) {
       dd = "0" + dd;
@@ -39,6 +43,14 @@
 
     if (mm < 10) {
       mm = "0" + mm;
+    }
+
+    if (ss < 10) {
+      ss = "0" + ss;
+    }
+
+    if (ms < 10) {
+      ms = "0" + ms;
     }
 
     let ampm = "AM";
@@ -54,6 +66,7 @@
       hh = "0" + hh;
     }
 
+    // return `${dd}/${mon}/${yyyy} ${hh}:${mm}:${ss}:${ms} ${ampm}`;
     return `${dd}/${mon}/${yyyy} ${hh}:${mm} ${ampm}`;
   }
 
@@ -80,23 +93,46 @@
 
     for (var savedTime in dataOnList) {
       var objAcc = dataOnList[savedTime];
-      var strSavedTime = getDateTimeString(new Date(savedTime)); //not working
+      // console.log("AccData :" + JSON.stringify(objAcc)); //this is working fine
+      console.log("savedtime :" + savedTime);
+      console.log("recievedtime :" + JSON.stringify(objAcc.t));
+      // console.log("Ignition :" + JSON.stringify(objAcc.acc));
+
+      var strSavedTime = getDateTimeString(new Date(Number(savedTime)));
+      // console.log("savedtime :" + strSavedTime);
       var strReceivedTime = getDateTimeString(new Date(objAcc.t));
+      var timeDuration = savedTime - objAcc.t; //in miliseconds
+
+      // const timeDurationInSeconds = timeDuration / 1000;
+      // const timeDurationInMinutes = timeDurationInSeconds / 60;
+      // const timeDurationInHours = timeDurationInMinutes / 60;
+      // const timeDurationInDays = timeDurationInHours / 24;
+      // console.log("duration :" + timeDurationInSeconds + " seconds");
+      // console.log("duration :" + timeDurationInMinutes + " minutes");
+      // console.log("duration :" + timeDurationInHours + " hrs");
+      // console.log("duration :" + timeDurationInDays + " days");
+
       let dataAbtTrip = objAcc.data;
-    
+      // console.log(JSON.stringify(dataAbtTrip)); //this is working fine
+      // console.log("Longitude :" + JSON.stringify(dataAbtTrip.loc.o));
+      // console.log("Latitude :" + JSON.stringify(dataAbtTrip.loc.a));
+      // console.log("Altitude :" + JSON.stringify(dataAbtTrip.loc.l));
+      // console.log("Speed :" + JSON.stringify(dataAbtTrip.loc.s));
+      // console.log("gpsModel :" + JSON.stringify(dataAbtTrip.model));
+
       var strHTMLTripDetails = `<tr>
   <td>${objAcc.acc}</td>
   <td>${dataAbtTrip.model}</td>
   <td>${dataAbtTrip.loc.s}&nbsp;m/s</td>
-  <td>${strSavedTime}</td> 
+  <td>${strSavedTime}</td>
   <td>${strReceivedTime}</td>
+  <td>${timeDuration} ms</td>
   <td>${dataAbtTrip.loc.a}&deg; N</td>
   <td>${dataAbtTrip.loc.o}&deg; E</td>
   <td>${dataAbtTrip.loc.l}</td>
   </tr>`;
 
       strTripData += strHTMLTripDetails;
-
       console.log("\n");
     }
     $("tbody#tripSummaryDetails").html(strTripData);
